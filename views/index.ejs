@@ -1,0 +1,27 @@
+<%- include('./partials/header.ejs') %> 
+<%- include('./partials/navbar') %> 
+
+<body id="galleryBody">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <div class="container mt-5 w-75">
+    <h1 id="galleryHeading" class="text-center rounded shadow mb-5 py-3">Piano Gallery</h1>
+    <% for(let piano of foundPianos) { %>
+        <div id="galleryCard" class="mb-5 card rounded shadow-lg">
+            <div class="row no-gutters">
+              <div class="col-md-6 image">
+                <img src="<%= piano.images[0] %>" id="galleryImage" class="card-img p-3" alt="...">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="card-title"><%= piano.make %> <%= piano.model %></h5>
+                  <p class="card-text"><%= piano.description %></p>
+                  <h5 class="card-title"><%= piano.price %></h5>
+                </div>
+              </div>
+            </div>
+          </div>
+     <% } %> 
+</div>
+
+<%- include('./partials/footer.ejs') %> 
+

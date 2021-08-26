@@ -113,6 +113,10 @@
 
 /* Gallery */
 
+#galleryCard {
+    margin-bottom: 3rem;
+    bottom: 3rem;
+}
 
 #galleryImage {
     filter: grayscale(20%);
@@ -136,6 +140,7 @@
 #galleryHeading{
     font-weight: 700;
     margin-top: 6rem;
+    margin-bottom: 6rem;
     background-color: var(--transparentWhite);
 }
 

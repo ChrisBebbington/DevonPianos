@@ -1,11 +1,13 @@
 const mongoose = require('mongoose');
 const Piano = require('./models/pianos.js');
 
-mongoose.connect('mongodb://localhost:27017/DevonPianos', {
-    useNewUrlParser: true,
-    useCreateIndex: true,
-    useUnifiedTopology: true
-});
+const dbUrl = 'mongodb+srv://Bebbs:Password123@yelpcampcluster.txt4o.mongodb.net/YelpCampCluster?retryWrites=true&w=majority';
+
+mongoose.connect(dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
+    .then(
+    () => {console.log("Mongoose Connected")},
+    err => {console.log(err)}
+    );
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
